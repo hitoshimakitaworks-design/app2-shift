@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+html { scroll-behavior: smooth; }
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; font-size: 11px; }
+  .shift-table td, .shift-table th { padding: 2px 4px !important; font-size: 10px; }
+}
