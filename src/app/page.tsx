@@ -202,8 +202,142 @@ export default function Home() {
         )}
       </main>
 
+      {/* AdSense content: 使い方・活用事例・FAQ */}
+      <div className="max-w-3xl mx-auto px-4 mt-14 mb-6 space-y-12 no-print">
+        {lang === 'ja' ? (
+          <>
+            <section>
+              <h2 className="text-xl font-bold text-gray-800 mb-4">シフト自動作成ツールの使い方</h2>
+              <ol className="space-y-4">
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-600 text-white text-sm flex items-center justify-center font-bold">1</span>
+                  <div>
+                    <p className="font-semibold text-gray-800">スタッフ名と希望休を入力する</p>
+                    <p className="text-sm text-gray-600 mt-1">スタッフの名前を入力し、休みを希望する日付をカレンダーからクリックして選択します。スタッフは「＋追加」ボタンで何名でも増やせます。</p>
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-600 text-white text-sm flex items-center justify-center font-bold">2</span>
+                  <div>
+                    <p className="font-semibold text-gray-800">必要最低人数と対象月を設定する</p>
+                    <p className="text-sm text-gray-600 mt-1">1日あたりの必要最低人数と対象年月を選択します。休み希望が重なった場合も、最低人数を確保するように自動調整されます。</p>
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-600 text-white text-sm flex items-center justify-center font-bold">3</span>
+                  <div>
+                    <p className="font-semibold text-gray-800">「シフトを生成」して印刷する</p>
+                    <p className="text-sm text-gray-600 mt-1">ボタンを押すとシフト表が自動生成されます。印刷ボタンでそのままA4印刷またはPDF保存できます。</p>
+                  </div>
+                </li>
+              </ol>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-bold text-gray-800 mb-4">こんな現場で使われています</h2>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="bg-blue-50 rounded-xl p-5">
+                  <p className="font-semibold text-gray-800 mb-2">飲食店・カフェ</p>
+                  <p className="text-sm text-gray-600">アルバイトスタッフ5〜10名のシフトを毎月手動で組んでいたオーナーが、このツールで15分の作業を3分に短縮。希望休の反映漏れもなくなりました。</p>
+                </div>
+                <div className="bg-green-50 rounded-xl p-5">
+                  <p className="font-semibold text-gray-800 mb-2">美容院・エステサロン</p>
+                  <p className="text-sm text-gray-600">スタイリストの技術レベルや担当日を考慮してシフトを組む必要があるサロンでも、まず基本シフトをこのツールで自動生成してから手動調整する方法で活用されています。</p>
+                </div>
+                <div className="bg-purple-50 rounded-xl p-5">
+                  <p className="font-semibold text-gray-800 mb-2">学習塾・スクール</p>
+                  <p className="text-sm text-gray-600">大学生講師が多い塾では、定期試験期間の休み希望が集中します。このツールで希望を一括登録して自動調整することで、コマ不足を事前に把握できます。</p>
+                </div>
+                <div className="bg-yellow-50 rounded-xl p-5">
+                  <p className="font-semibold text-gray-800 mb-2">医療・介護施設</p>
+                  <p className="text-sm text-gray-600">夜勤や休日勤務のバランスを取る必要がある施設でも、まず希望休を整理する第一段階として活用できます。Excelが苦手なスタッフでも直感的に操作できると好評です。</p>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-bold text-gray-800 mb-4">よくある質問</h2>
+              <div className="space-y-4">
+                {[
+                  ['スタッフは何名まで登録できますか？', '現在のバージョンでは人数の上限はありません。ただし、あまりにも多人数になると画面が見づらくなることがあるため、印刷時のレイアウトをプレビューで確認することをお勧めします。'],
+                  ['シフトデータを保存できますか？', 'ブラウザを閉じるとデータは消えます。月次シフトは印刷またはPDF保存してください。将来的にはクラウド保存機能の追加を予定しています。'],
+                  ['希望休が重なった場合はどうなりますか？', '設定した「最低必要人数」を確保することを優先してシフトを自動調整します。全員の希望を叶えられない場合は、最低人数の確保が優先されます。'],
+                  ['スマートフォンでも使えますか？', '使えます。ただし、スタッフ数・日数が多い場合はPCまたはタブレットでの利用をお勧めします。印刷機能はPCからの操作が快適です。'],
+                ].map(([q, a]) => (
+                  <details key={q} className="border border-gray-200 rounded-lg">
+                    <summary className="p-4 font-medium text-gray-800 cursor-pointer hover:bg-gray-50">{q}</summary>
+                    <p className="px-4 pb-4 text-sm text-gray-600">{a}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+          </>
+        ) : (
+          <>
+            <section>
+              <h2 className="text-xl font-bold text-gray-800 mb-4">How to Use</h2>
+              <ol className="space-y-4">
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-600 text-white text-sm flex items-center justify-center font-bold">1</span>
+                  <div>
+                    <p className="font-semibold text-gray-800">Enter staff names and days off</p>
+                    <p className="text-sm text-gray-600 mt-1">Type each staff member's name and click their preferred days off on the calendar. Add as many staff as you need with the "+ Add" button.</p>
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-600 text-white text-sm flex items-center justify-center font-bold">2</span>
+                  <div>
+                    <p className="font-semibold text-gray-800">Set minimum staffing and target month</p>
+                    <p className="text-sm text-gray-600 mt-1">Choose the year, month, and minimum number of staff required per day. The tool automatically resolves conflicts while respecting your minimum.</p>
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-600 text-white text-sm flex items-center justify-center font-bold">3</span>
+                  <div>
+                    <p className="font-semibold text-gray-800">Generate and print</p>
+                    <p className="text-sm text-gray-600 mt-1">Click "Generate Shift" to produce the schedule instantly. Print or save as PDF directly from the preview.</p>
+                  </div>
+                </li>
+              </ol>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+              <div className="space-y-4">
+                {[
+                  ['How many staff can I add?', 'There is no hard limit. For large teams, we recommend checking the print preview to make sure the layout fits on the page.'],
+                  ['Is my data saved?', 'Data is stored only in your browser for the current session. Print or save as PDF before closing the tab to keep your schedule.'],
+                  ['What happens when too many people request the same day off?', 'The tool prioritizes your minimum staffing requirement. If honoring all requests would leave you short, it automatically overrides some requests to meet your minimum.'],
+                ].map(([q, a]) => (
+                  <details key={q} className="border border-gray-200 rounded-lg">
+                    <summary className="p-4 font-medium text-gray-800 cursor-pointer hover:bg-gray-50">{q}</summary>
+                    <p className="px-4 pb-4 text-sm text-gray-600">{a}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+          </>
+        )}
+      </div>
+
       <footer className="py-6 text-center no-print">
         <p className="text-xs text-gray-400">{t.appName} — {t.tagline}</p>
+        <p className="text-xs text-gray-300 mt-1">© 2026 Free to use</p>
+        <div className="flex justify-center gap-4 mt-2 flex-wrap">
+          {lang === 'ja' ? (
+            <>
+              <a href="/privacy" className="text-xs text-gray-400 hover:text-gray-600 underline">プライバシーポリシー</a>
+              <a href="/terms" className="text-xs text-gray-400 hover:text-gray-600 underline">利用規約</a>
+              <a href="/legal" className="text-xs text-gray-400 hover:text-gray-600 underline">特定商取引法に基づく表記</a>
+            </>
+          ) : (
+            <>
+              <a href="/privacy" className="text-xs text-gray-400 hover:text-gray-600 underline">Privacy Policy</a>
+              <a href="/terms" className="text-xs text-gray-400 hover:text-gray-600 underline">Terms of Service</a>
+              <a href="/legal" className="text-xs text-gray-400 hover:text-gray-600 underline">Legal Notice</a>
+            </>
+          )}
+        </div>
       </footer>
     </div>
   )

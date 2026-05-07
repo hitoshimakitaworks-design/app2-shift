@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { I18nProvider } from '@/lib/i18n'
+import { CookieBanner } from '@/components/CookieBanner'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -19,7 +20,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ja" className={inter.variable}>
       <body className="min-h-screen bg-gray-50 font-sans">
-        <I18nProvider>{children}</I18nProvider>
+        <I18nProvider>
+          {children}
+          <CookieBanner />
+        </I18nProvider>
       </body>
     </html>
   )
