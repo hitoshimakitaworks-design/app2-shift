@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     description: 'スタッフの希望休を入力するだけでシフト表を自動生成',
     type: 'website',
   },
+  verification: {
+    google: 'mS7X-tVy63VAOIL',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
